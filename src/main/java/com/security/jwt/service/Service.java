@@ -15,8 +15,7 @@ import com.security.jwt.model.AuthenticationResponse;
 import com.security.jwt.model.RegisterRequest;
 
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.var;
+
 @AllArgsConstructor
 @org.springframework.stereotype.Service
 
