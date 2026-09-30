@@ -31,28 +31,6 @@ public class ApplicationConfig  {
 
     @Bean
     public UserDetailsService userDetailservice() {
-        
-//            @Override
-//            public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//                User user = userRepo.findByEmail(username)
-//                        .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + username));
-//
-//                // Convert your User entity to Spring Security UserDetails
-//                return new org.springframework.security.core.userdetails.User(
-//                        user.getEmail(),
-//                        user.getPassword(),
-//                        true, true, true, true,
-//                        new ArrayList<>() // Here you should convert roles/authorities if you have them
-//                );
-//            }
- //       	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//                User user = userRepo.findByEmail(username)
-//                        .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + username));
-//				return user;}
-        	
-        	
-        	
-        	
 
          return username->userRepo.findByEmail(username)
         		 .orElseThrow(()->new UsernameNotFoundException("user not found"));
@@ -81,7 +59,29 @@ public class ApplicationConfig  {
     protected AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
-    
-   
-    
-}
+    }
+
+
+            
+//            @Override
+//            public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//                User user = userRepo.findByEmail(username)
+//                        .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + username));
+//
+//                // Convert your User entity to Spring Security UserDetails
+//                return new org.springframework.security.core.userdetails.User(
+//                        user.getEmail(),
+//                        user.getPassword(),
+//                        true, true, true, true,
+//                        new ArrayList<>() // Here you should convert roles/authorities if you have them
+//                );
+//            }
+ //       	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//                User user = userRepo.findByEmail(username)
+//                        .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + username));
+//				return user;}
+        	
+        	
+        	
+        	
+
